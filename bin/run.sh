@@ -7,5 +7,5 @@ fi
 
 app_dir=$1
 
-java -jar lib/karotz-vm-1.0-SNAPSHOT-jar-with-dependencies.jar $app_dir
+java -jar lib/karotz-vm-1.0-SNAPSHOT-jar-with-dependencies.jar -k $app_dir
 
