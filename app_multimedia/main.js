@@ -11,6 +11,7 @@ var buttonListener = function(event) {
     var path = "http://www.universal-soundbank.com/mp3/sounds/" + randomSound +".mp3"; 
 
     karotz.multimedia.play(path, function(event) { 
+      log("Play callback " + event);
       if (event == "TERMINATED") { 
         log("Sound terminalted. Press the button for another one.");
       }
