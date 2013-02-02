@@ -1,0 +1,19 @@
+<descriptor>
+    <version>1.0.0</version>
+    <accesses>
+        <access>tts</access>
+        <access>button</access>
+        <!-- Extra -->
+        <access>rfid</access>
+        <access>ears</access>
+        <access>led</access>
+        <access>asr</access>
+        <access>multimedia</access>
+        <access>http</access>
+    </accesses>
+    <apikey></apikey>
+    <deployment>hosted</deployment>
+    <interruptible>true</interruptible>
+    <awake>true</awake>
+    <multiConf>true</multiConf>
+</descriptor>
