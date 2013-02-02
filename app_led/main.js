@@ -2,9 +2,18 @@ include("util.js");
 
 var karotz_ip="192.168.1.74"
 
+var test = 2;
+
 var buttonListener = function(event) {
   if (event == "DOUBLE") {
     exit();
+  }
+  else {
+    if (test == 0) setTimeout(500, startColorRange);
+    else if (test == 1) setTimeout(500, startColorFade);
+    else if (test == 2) setTimeout(500, startColorPulse);
+    else { log("nothing to do"); }
+    test++;
   }
   return true;
 }
@@ -30,13 +39,22 @@ var startColorRange = function() {
   }
   else {
     log("Colors complete");
-    exit();
   }
+}
+
+var startColorFade = function() {
+  karotz.led.light("000000");
+  karotz.led.fade("FFFFFF", 5000, function() {
+    log("Fad finished");
+  });
+}
+
+var startColorPulse = function() {
+  karotz.led.pulse("0000FF", 1000, -1);
 }
 
 var start = function(data) {
   karotz.button.addListener(buttonListener);
-  setTimeout(500, startColorRange);
 }
 
 karotz.connectAndStart(karotz_ip, 9123, start, {});
